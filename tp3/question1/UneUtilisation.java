@@ -1,5 +1,6 @@
 package question1;
 
+
 public class UneUtilisation {
 
 	public static void main(String[] args) throws Exception {
@@ -13,12 +14,14 @@ public class UneUtilisation {
 		System.out.println(" la pile p1 = " + p1); // Quel est le résultat ?
 
 		p2.empiler(new Integer(1000));
+		//p2.empiler(new Integer(5));
 		p1.empiler(p2);
 		System.out.println(" la p1 = " + p1); // Quel est le résultat ?
 
 		try {
 			p1.empiler(new PolygoneRegulier(4,100));
 			// ....
+			//System.out.println(" la p1 =" + p1);
 			String s = (String) p1.depiler(); // vérifiez qu'une exception se
 												// produit
 		} catch (Exception e) {

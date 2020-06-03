@@ -140,7 +140,22 @@
 		<delete file="cobertura.log" />
 		<delete file="cobertura.ser" />
 	</target>
+	
+	<path id="cobertura.auxpath">
+<pathelement location="${bin}"/>
+    </path>
+
+    <target name="instrument_coverage" depends="init_coverage"
+        description="Instruments source code for coverage measurement">
+        <cobertura-instrument datafile="${coverage.datafile}">
+            <fileset refid="coverage-files"/>
+        <auxClasspath>
+              <path refid="cobertura.auxpath" />
+            </auxClasspath>
+        </cobertura-instrument>
+    </target>
 
 	<target name="coverage" depends="compile,instrument,test,coverage-report,summary-coverage-report,alternate-coverage-report" description="Compile, instrument ourself, run the tests and generate JUnit and coverage reports."/>
+
 
 </project>

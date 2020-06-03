@@ -5,10 +5,10 @@ import question1.PolygoneRegulier;
 public class UneUtilisation {
 
     public static void main(String[] args) throws Exception {
-        // déclarer p1
-        // déclarer p2
+      
+        PileI<PolygoneRegulier> p1 = new Pile2<PolygoneRegulier>();
+        PileI<PileI<PolygoneRegulier>> p2 = new Pile2<PileI<PolygoneRegulier>>();
 
-        // p1 est ici une pile de polygones réguliers PolygoneRegulier.java
         p1.empiler(new PolygoneRegulier(4, 100));
         p1.empiler(new PolygoneRegulier(5, 100));
 
@@ -26,6 +26,6 @@ public class UneUtilisation {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
+     }
 
 }
